@@ -144,7 +144,7 @@ void sl_bt_on_event(sl_bt_msg_t *evt)
           {
             app_log_info("sleep timer wakeup evt\r\n");
 
-             BMS3_Driver_Init();
+             //BMS3_Driver_Init();
 //
 //            float AFE_value = BMS3_Driver_EXTI_IMEAS_INT_CFG();
 //                      app_log_info("AFE_VALUE = %d\r\n",(int32_t)(AFE_value*100));
@@ -155,8 +155,8 @@ void sl_bt_on_event(sl_bt_msg_t *evt)
 
           //  BMS3_Driver_Init();
 
-           float AFE_value = BMS3_Driver_EXTI_IMEAS_INT_CFG();
-           app_log_info("AFE_VALUE = %d\r\n",(int32_t)(AFE_value*100));
+//           float AFE_value = BMS3_Driver_EXTI_IMEAS_INT_CFG();
+//           app_log_info("AFE_VALUE = %d\r\n",(int32_t)(AFE_value*100));
           }
 
 
@@ -192,7 +192,7 @@ void sl_bt_on_event(sl_bt_msg_t *evt)
                GPIO_PinOutClear(BSP_GPIO_HALL_LOCK_PORT,BSP_GPIO_HALL_LOCK_PIN);
                Afe_Chip_Disable();
 
-             app_log_info("HALL_Lock off.\n");
+               app_log_info("HALL_Lock off.\n");
            } else if (data_recv == 0x01) {
            //  sl_led_turn_on(SL_SIMPLE_LED_INSTANCE(0));
 //               GPIO_PinOutGet(BSP_GPIO_LED1_PORT, BSP_GPIO_LED1_PIN);

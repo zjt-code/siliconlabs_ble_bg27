@@ -20,39 +20,39 @@ source:
 - {path: app.c}
 tag: ['hardware:rf:band:2400']
 include:
-- path: ''
+- path: .
   file_list:
   - {path: app.h}
 sdk: {id: gecko_sdk, version: 4.4.0}
 toolchain_settings: []
 component:
-- {id: iostream_rtt}
-- {id: segger_rtt}
+- {id: EFR32BG27C230F768IM40}
+- {id: app_assert}
+- {id: app_log}
+- {id: bluetooth_feature_connection}
+- {id: bluetooth_feature_gatt}
 - {id: bluetooth_feature_gatt_server}
-- {id: in_place_ota_dfu}
-- {id: bluetooth_feature_sm}
-- {id: mpu}
 - {id: bluetooth_feature_legacy_advertiser}
+- {id: bluetooth_feature_legacy_scanner}
+- {id: bluetooth_feature_sm}
+- {id: bluetooth_feature_system}
+- {id: bluetooth_stack}
+- {id: bootloader_interface}
+- {id: bt_post_build}
+- {id: component_catalog}
 - {id: device_init_lfxo}
 - {id: gatt_configuration}
-- {id: EFR32BG27C230F768IM40}
 - {id: gatt_service_device_information}
-- {id: bluetooth_stack}
 - {id: gpiointerrupt}
+- {id: in_place_ota_dfu}
+- {id: iostream_rtt}
+- {id: mpu}
 - {id: rail_util_pti}
-- {id: bluetooth_feature_gatt}
-- {id: udelay}
-- {id: bluetooth_feature_legacy_scanner}
-- {id: app_log}
-- {id: bt_post_build}
-- {id: bluetooth_feature_connection}
-- {id: bluetooth_feature_system}
-- {id: component_catalog}
+- {id: segger_rtt}
+- {id: segger_rtt_printf}
 - instance: [inst0]
   id: spidrv
-- {id: bootloader_interface}
-- {id: app_assert}
-- {id: segger_rtt_printf}
+- {id: udelay}
 other_file:
 - {path: image/readme_img0.png}
 - {path: image/readme_img1.png}

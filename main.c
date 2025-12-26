@@ -41,6 +41,8 @@
 
 
 #include "app_log.h"
+#include "simplegluco.h"
+#include "cur_filter.h"
 
 int main(void)
 {
@@ -55,6 +57,15 @@ int main(void)
 
   app_log_info( "%s","my cgsm_code start up\r\n");
 
+
+
+  simpleGlucoInit();
+
+  sensorK = 0.647;
+  cur_get_cur_error_value(sensorK);
+
+
+
 #if defined(SL_CATALOG_KERNEL_PRESENT)
   // Start the kernel. Task(s) created in app_init() will start running.
   sl_system_kernel_start();
@@ -66,6 +77,8 @@ int main(void)
 
     // Application process.
     app_process_action();
+
+
 
 #if defined(SL_CATALOG_POWER_MANAGER_PRESENT)
     // Let the CPU go to sleep if the system allows it.
